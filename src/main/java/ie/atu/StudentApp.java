@@ -17,13 +17,14 @@ public class StudentApp {
         String name = "";
         String email = "";
         String course = "";
-        for (int i = 0; i <= numberOfStudents; i++) {
+        for (int i = 0; i < numberOfStudents; i++) {
             System.out.println("Insert name:");
             name = sc.nextLine().trim();
             System.out.println("Insert email:");
             email = sc.nextLine().trim().toLowerCase();
             if (isEmailDuplicate(students, email)) {
                 System.out.println("Email already exists. Cannot add student.");
+                System.out.println();
                 continue;
             }
             System.out.println("Insert course:");
