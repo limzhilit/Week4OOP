@@ -15,6 +15,8 @@ public class StudentApp {
         System.out.println("Insert number of students:");
         int numberOfStudents = sc.nextInt();
         sc.nextLine();
+        System.out.println();
+
 
         String name = "";
         String email = "";
@@ -24,10 +26,10 @@ public class StudentApp {
             name = sc.nextLine().trim();
             System.out.println("Insert email:");
             email = sc.nextLine().trim().toLowerCase();
-            if (isEmailDuplicate(students, email)) {
+            while (isEmailDuplicate(students, email)) {
                 System.out.println("Email already exists. Cannot add student.");
-                System.out.println();
-                continue;
+                System.out.println("Insert another email:");
+                email = sc.nextLine().trim().toLowerCase();
             }
             System.out.println("Insert course:");
             course = sc.nextLine().trim();
