@@ -7,8 +7,10 @@ public class StudentApp {
 
     public static void main(String[] args) {
 
+        // initialise student array
         ArrayList<Student> students = new ArrayList<>();
 
+        // scan yser input
         Scanner sc = new Scanner(System.in);
         System.out.println("Insert number of students:");
         int numberOfStudents = sc.nextInt();
@@ -33,15 +35,18 @@ public class StudentApp {
             System.out.println();
         }
 
+        // print student data
         for (Student student : students) {
             System.out.println(student);
         }
 
     }
 
+
+    // check for duplicate
     public static boolean  isEmailDuplicate(ArrayList<Student> students, String email) {
         for (Student s : students) {
-            if (s.getEmail().equalsIgnoreCase(email)) {
+            if (s.getEmail().equals(email)) {
                 return true; // Duplicate found
             }
         }
